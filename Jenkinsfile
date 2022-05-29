@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage ('Source Code'){
             steps{
-                git branch: 'main', url: 'https://github.com/pixelswapnil13/spring-petclinic.git'
+                git branch: 'feature_declarative', url: 'https://github.com/pixelswapnil13/myspringpetclinic.git'
             }
 
         }
