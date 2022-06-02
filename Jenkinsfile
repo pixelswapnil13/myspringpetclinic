@@ -5,12 +5,11 @@ pipeline{
             steps{
                 git branch: 'feature_declarative', url: 'https://github.com/pixelswapnil13/myspringpetclinic.git'
             }
-
         }
         stage ('Build the code'){
             withSonarQubeEnv('SONAR_LATEST') {
                     sh script: "mvn package sonar:sonar"
-                }
+            }
         }
         stage ('Running Junit test'){
             steps{
