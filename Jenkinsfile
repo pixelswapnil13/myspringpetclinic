@@ -8,9 +8,9 @@ pipeline{
 
         }
         stage ('Build the code'){
-            steps{
-                sh script: 'mvn clean package'
-            } 
+            withSonarQubeEnv('SONAR_LATEST') {
+                    sh script: "mvn package sonar:sonar"
+                }
         }
         stage ('Running Junit test'){
             steps{
