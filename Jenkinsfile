@@ -6,13 +6,14 @@ pipeline {
  stages{
     stage('Source Code') {
        steps{
-           git branch: 'main', url: 'https://github.com/pixelswapnil13/myspringpetclinic.git' 
+           git url: 'https://github.com/pixelswapnil13/myspringpetclinic.git',
+           branch: 'main'
         }
     }
     stage('Build the code ans SonarQube Analysis'){
         steps{ 
             withSonarQubeEnv('SONAR_8.9'){
-                sh 'mvn clean package sonar:sonar'
+                sh script: "mvn clean package sonar:sonar"
             }  
         }
     }
