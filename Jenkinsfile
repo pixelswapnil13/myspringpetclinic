@@ -12,9 +12,7 @@ pipeline {
     }
     stage('Build the code ans SonarQube Analysis'){
         steps{ 
-            withSonarQubeEnv('SONAR_8.9'){
-                sh script: "mvn clean package sonar:sonar"
-            }  
+              sh script: "mvn clean package"
         }
     }
     stage('Junit Test'){
