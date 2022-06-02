@@ -6,7 +6,7 @@ pipeline{
                 git branch: 'feature_declarative', url: 'https://github.com/pixelswapnil13/myspringpetclinic.git'
             }
         }
-        stage ('Build the code'){
+        stage ('Build the Code and sonarqube-analysis'){
             steps {
                 withSonarQubeEnv('SONAR_8.9') {
                     sh script: "mvn package sonar:sonar"
@@ -25,4 +25,3 @@ pipeline{
         }
     }
 }
-//Declarative pipeline
