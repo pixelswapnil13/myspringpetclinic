@@ -8,7 +8,7 @@ pipeline{
         }
         stage ('Build the code'){
             steps {
-                withSonarQubeEnv('SONAR_LATEST') {
+                withSonarQubeEnv('SONAR_8.9') {
                     sh script: "mvn package sonar:sonar"
                   }
             }   
