@@ -1,8 +1,8 @@
 pipeline {
  agent{ label 'JDK11' }
- triggers {
-        cron('0 * * * *')
-    }
+//  triggers {
+//         cron('0 * * * *')
+//     }
  stages{
     stage('Source Code') {
        steps{
